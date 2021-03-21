@@ -10,6 +10,6 @@ Welcome to Python3!
 -=:___________/
 <3, Juno
 """
- 
- 
+
+
 print(snake_string * how_many_snakes)
