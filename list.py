@@ -166,7 +166,7 @@ print(list1.index(123))  # 0
 print(list1.index(123, 1))  # 2
 print(list1.index(123, 3, 7))  # 4
 
-'''
+j'''
 list.reverse() 反向列表中元素
 '''
 x = [123, 456, 789]
@@ -174,5 +174,26 @@ x.reverse()
 print(x)  # [789, 456, 123]
 
 '''
-list.sort(key=None, reverse=False) 对原列表进行排序。
+list.sort(key=None, reverse=False) 对原列表进行排序。j
+1.key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，j
+指定可迭代对象中的一个元素来进行排序。
+2.reverse -- 排序规则，reverse = True降序，reverse = False升序（默认）。
+3.该方法没有返回值，但是会对列表的对象进行排序
 '''
+x = [123, 456, 789, 213]
+x.sort()
+print(x)
+# [123, 213, 456, 789]
+x.sort(reverse=True)
+print(x)
+# [789, 456, 213, 123]
+# 获取列表的第二个元素
+def takeSecond(elem):
+return elem[1]
+x = [(2, 2), (3, 4), (4, 1), (1, 3)]
+x.sort(key=takeSecond)
+print(x)
+# [(4, 1), (2, 2), (1, 3), (3, 4)]
+x.sort(key=lambda a: a[0])
+print(x)
+# [(1, 3), (2, 2), (3, 4), (4, 1)]
