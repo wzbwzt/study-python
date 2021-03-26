@@ -250,3 +250,44 @@ print(sumary(10, 20)) # 30
 func = lambda *args: sum(args)
 print(func(1, 2, 3, 4, 5)) # 15
 
+'''
+函数式编程 
+
+是指代码中每一块都是不可变的，都由纯函数的形式组成。这里的纯函数，是指函数本身相互独立、互不影
+响，对于相同的输入，总会有相同的输出，没有任何副作用。
+
+匿名函数 常常应用于函数式编程的高阶函数 (high-order function)中，主要有两种形式：
+1. 参数是函数 (filter, map)
+2. 返回值是函数 (closure)
+'''
+
+'''
+e.g.，在 filter 和 map 函数中的应用：
+1. filter(function, iterable) 过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象，如果要转换为列表，
+可以使用 list() 来转换。
+2.map(function, *iterables) 根据提供的函数对指定序列做映射。
+'''
+odd = lambda x: x % 2 == 1
+templist = filter(odd, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(list(templist)) # [1, 3, 5, 7, 9]
+
+m1 = map(lambda x: x ** 2, [1, 2, 3, 4, 5])
+print(list(m1)) 
+# [1, 4, 9, 16, 25]
+m2 = map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
+print(list(m2)) 
+# [3, 7, 11, 15, 19]
+
+
+'''
+自己定义高阶函数
+'''
+def apply_to_list(fun, some_list):
+ return fun(some_list)
+lst = [1, 2, 3, 4, 5]
+print(apply_to_list(sum, lst))
+# 15
+print(apply_to_list(len, lst))
+# 5
+print(apply_to_list(lambda x: sum(x) / len(x), lst))
+# 3.0
