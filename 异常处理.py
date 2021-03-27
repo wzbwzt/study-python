@@ -35,7 +35,6 @@
 33. UnicodeDecodeError：Unicode解码时的异常
 34. UnicodeEncodeError：Unicode编码错误导致的异常
 35. UnicodeTranslateError：Unicode转换错误导致的异常
-error
 
 '''
 '''

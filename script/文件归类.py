@@ -18,7 +18,5 @@ def arrangeFile(path):
                 shutil.move(os.path.join(path,f), floder_name)
         
 
-# arrangeFile(path)
+arrangeFile(path)
 
-for f in path: 
-    shutil.move(os.path.join(path,f),".."+path)
