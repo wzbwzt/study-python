@@ -41,7 +41,11 @@ OSError
 '''
 
 import os
+<<<<<<< HEAD
 path = "D:\\www\\python_study"
+=======
+path = 'D:\\www\\python_study'
+>>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 print("当前工作目录 : %s" % os.getcwd())
 
 os.chdir(path)
