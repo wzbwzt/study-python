@@ -166,7 +166,7 @@ print(list1.index(123))  # 0
 print(list1.index(123, 1))  # 2
 print(list1.index(123, 3, 7))  # 4
 
-j'''
+'''
 list.reverse() 反向列表中元素
 '''
 x = [123, 456, 789]
@@ -188,8 +188,12 @@ x.sort(reverse=True)
 print(x)
 # [789, 456, 213, 123]
 # 获取列表的第二个元素
+
+
 def takeSecond(elem):
-return elem[1]
+    return elem[1]
+
+
 x = [(2, 2), (3, 4), (4, 1), (1, 3)]
 x.sort(key=takeSecond)
 print(x)
