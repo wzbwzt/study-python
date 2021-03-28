@@ -6,9 +6,8 @@
 3. 逗号 将每个元素一一分开
 4.由于list的元素可以是任何对象，因此列表中所保存的是对象的指针。即使保存一个简单的 [1,2,3] ，也有3个指针和3个
 整数对象。
-5.列表不像元组，列表内容可更改 (mutable)，因此附加 ( append , extend )、插入 ( insert )、删除 ( remove , pop ) 这些
-操作都可以用在它身上。
-
+5.列表不像元组，列表内容可更改 (mutable)，因此附加 ( append , extend )、插入 ( insert )、
+删除 ( remove ,pop ) 这些操作都可以用在它身上。
 '''
 # 创建方式1:利用 range() 创建列表
 x = list(range(1, 11, 2))
@@ -60,7 +59,8 @@ x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 x.append(['Thursday', 'Sunday'])
 
 print(x)
-# ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ['Thursday', 'Sunday']]
+# ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ['Thursday',
+# 'Sunday']]
 
 '''
 list.extend(seq) 在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
@@ -69,7 +69,8 @@ list.extend(seq) 在列表末尾一次性追加另一个序列中的多个值（
 x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 x.extend(['Thursday', 'Sunday'])
 print(x)
-# ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday', 'Sunday']
+# ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Thursday',
+# 'Sunday']
 
 '''
 list.insert(index, obj) 在编号 index 位置前插入 obj 。
@@ -111,9 +112,9 @@ print(x)  # ['Wednesday', 'Thursday', 'Friday']
 '''
 1. 通过元素的索引值，从列表获取单个元素，注意，列表索引值是从0开始的。(左闭右开)
 2. 通过将索引指定为-1，可让Python返回最后一个列表元素，索引 -2 返回倒数第二个列表元素，以此类推。
-3.切片的通用写法是 start : stop : step;以具体的 step 从编号 start 往编号 stop 切片。注意最后把 step 设为 -1，相当于将列表反向排列。
+3.切片的通用写法是 start : stop : step;以具体的 step 从编号 start 往编号 stop 切片。注意最后把 step
+设为 -1，相当于将列表反向排列。
 4.[:]复制列表中的所有元素（浅拷贝）。
-
 '''
 
 x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
