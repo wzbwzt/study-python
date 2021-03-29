@@ -14,10 +14,11 @@ def showFilePath(path):
         if os.path.isdir(path):
             for i in os.listdir(path):
                 if File in i:
-                    print("查找路径是："+os.path.join(path,i))
-                if os.path.isdir(os.path.join(path,i)):
-                    showFilePath(os.path.join(path,i))
-    except (BaseException, FileNotFoundError,NotImplementedError)as error:
+                    print("查找路径是："+os.path.join(path, i))
+                if os.path.isdir(os.path.join(path, i)):
+                    showFilePath(os.path.join(path, i))
+    except (BaseException, FileNotFoundError, NotImplementedError)as error:
         print("err:"+str(error))
+
 
 showFilePath(Path)
