@@ -1,6 +1,6 @@
 {
-    "python.pythonPath": "D:\\python3.8\\python.exe",
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
+    "python.pythonPath": "/usr/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
     "python.linting.enabled": true
 }
