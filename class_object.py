@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# 类与对象
-=======
 #类与对象
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 对象=属性+方法
@@ -13,15 +9,8 @@
 2.继承：子类自动共享父类之间数据和方法的机制
 3.多态：不同对象对同一方法响应不同的行动
 '''
-<<<<<<< HEAD
-# 1
-
-
-class Turtle:  # Python中的类名约定以大写字母开头
-=======
 #1
 class Turtle: # Python中的类名约定以大写字母开头
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     """关于类的一个简单例子"""
     # 属性
     color = 'green'
@@ -32,7 +21,6 @@ class Turtle: # Python中的类名约定以大写字母开头
 
     # 方法
     def climb(self):
-<<<<<<< HEAD
         print('我正在很努力的向前爬...')
 
     def run(self):
@@ -46,17 +34,6 @@ class Turtle: # Python中的类名约定以大写字母开头
 
     def sleep(self):
         print('困了，睡了，晚安，zzz')
-=======
-    print('我正在很努力的向前爬...')
-    def run(self):
-    print('我正在飞快的向前跑...')
-    def bite(self):
-    print('咬死你咬死你!!')
-    def eat(self):
-    print('有得吃，真满足...')
-    def sleep(self):
-    print('困了，睡了，晚安，zzz')
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 
 tt = Turtle()
@@ -78,7 +55,6 @@ tt.bite()
 print(type(Turtle))
 # <class 'type'>
 
-<<<<<<< HEAD
 # 2.
 
 
@@ -86,19 +62,12 @@ class MyList(list):
     pass
 
 
-=======
-#2.
-class MyList(list):
-    pass
-
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 lst = MyList([1, 5, 2, 7, 8])
 lst.append(9)
 lst.sort()
 print(lst)
 # [1, 2, 5, 7, 8, 9]
 
-<<<<<<< HEAD
 # 3.
 
 
@@ -106,58 +75,33 @@ class Animal:
     def run(self):
         raise AttributeError('子类必须实现这个方法')
 
-=======
-#3.
-class Animal:
-    def run(self):
-    raise AttributeError('子类必须实现这个方法')
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 class People(Animal):
     def run(self):
         print('人正在走')
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class Pig(Animal):
     def run(self):
         print('pig is walking')
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class Dog(Animal):
     def run(self):
         print('dog is running')
 
-<<<<<<< HEAD
 
 def func(animal):
     animal.run()
 
 
-=======
-def func(animal):
-    animal.run()
-
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 func(Pig())
 # pig is walking
 
 
-<<<<<<< HEAD
 # self
-=======
-#self
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 类的方法与普通的函数只有一个特别的区别 —— 它们必须有一个额外的第一个参数名称（对应于该实例，即该对象本
 身），按照惯例它的名称是 self 。在调用方法时，我们无需明确提供与参数 self 相对应的参数。
 '''
-<<<<<<< HEAD
 
 
 class Ball:
@@ -167,13 +111,6 @@ class Ball:
     def kick(self):
         print("我叫%s,该死的，谁踢我..." % self.name)
 
-=======
-class Ball:
-    def setName(self, name):
-    self.name = name
-    def kick(self):
-    print("我叫%s,该死的，谁踢我..." % self.name)
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 a = Ball()
 a.setName("球A")
@@ -185,7 +122,6 @@ b.kick()
 # 我叫球B,该死的，谁踢我...
 
 
-<<<<<<< HEAD
 # 公有与私有
 ''' 
 在 Python 中定义私有变量只需要在变量名或函数名前加上“__”两个下划线，那么这个函数或变量就会为私有的了
@@ -197,23 +133,11 @@ class JustCounter:
     __secretCount = 0  # 私有变量
     publicCount = 0  # 公开变量
 
-=======
-
-#公有与私有
-''' 
-在 Python 中定义私有变量只需要在变量名或函数名前加上“__”两个下划线，那么这个函数或变量就会为私有的了
-'''
-#私有属性实例
-class JustCounter:
-    __secretCount = 0 # 私有变量
-    publicCount = 0 # 公开变量
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def count(self):
         self.__secretCount += 1
         self.publicCount += 1
         print(self.__secretCount)
 
-<<<<<<< HEAD
 
 counter = JustCounter()
 counter.count()  # 1
@@ -243,49 +167,16 @@ class Site:
         self.__foo()
 
 
-=======
-counter = JustCounter()
-counter.count() # 1
-counter.count() # 2
-print(counter.publicCount) # 2
-print(counter._JustCounter__secretCount) # 2 Python的私有为伪私有
-print(counter.__secretCount) 
-# AttributeError: 'JustCounter' object has no attribute '__secretCount'
-
-#类的私有方法实例
-class Site:
-    def __init__(self, name, url):
-        self.name = name # public
-        self.__url = url # private
-    def who(self):
-        print('name : ', self.name)
-        print('url : ', self.__url)
-    def __foo(self): # 私有方法
-        print('这是私有方法')
-    def foo(self): # 公共方法
-        print('这是公共方法')
-        self.__foo()
-
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 x = Site('老马的程序人生', 'https://blog.csdn.net/LSGO_MYP')
 x.who()
 # name : 老马的程序人生
 # url : https://blog.csdn.net/LSGO_MYP
-<<<<<<< HEAD
 x.foo()  # 这是公共方法
 x.__foo()  # 这是私有方法
 # AttributeError: 'Site' object has no attribute '__foo'
 
 
 # 类的继承：派生类
-=======
-x.foo()# 这是公共方法
-x.__foo()# 这是私有方法
-# AttributeError: 'Site' object has no attribute '__foo'
-
-
-#类的继承：派生类
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 class DerivedClassName(BaseClassName):
  <statement-1>
@@ -299,13 +190,9 @@ BaseClassName（示例中的基类名）必须与派生类定义在一个作用�
 模块中时这一点非常有用：
 '''
 
-<<<<<<< HEAD
 # 子类中定义与父类同名的方法或属性，则会自动覆盖父类对应的方法或属性
 
 
-=======
-#子类中定义与父类同名的方法或属性，则会自动覆盖父类对应的方法或属性
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class people:
     # 定义基本属性
     name = ''
@@ -313,38 +200,24 @@ class people:
     # 定义私有属性,私有属性在类外部无法直接进行访问
     __weight = 0
     # 定义构造方法
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w):
         self.name = n
         self.age = a
         self.__weight = w
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def speak(self):
         print("%s 说: 我 %d 岁。" % (self.name, self.age))
 
 # 单继承示例
-<<<<<<< HEAD
 
 
 class student(people):
     grade = ''
 
-=======
-class student(people):
-    grade = ''
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w, g):
         # 调用父类的构函
         people.__init__(self, n, a, w)
         self.grade = g
     # 覆写父类的方法
-<<<<<<< HEAD
 
     def speak(self):
         print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
@@ -353,29 +226,16 @@ class student(people):
 s = student('Joel', 10, 60, 3)
 s.speak()
 # Joel 说: 我 10 岁了，我在读 3 年级
-=======
-    def speak(self):
-        print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
-
-s = student('小马的程序人生', 10, 60, 3)
-s.speak()
-# 小马的程序人生 说: 我 10 岁了，我在读 3 年级
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 
 class Fish:
     def __init__(self):
         self.x = r.randint(0, 10)
         self.y = r.randint(0, 10)
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def move(self):
         self.x -= 1
         print("我的位置", self.x, self.y)
 
-<<<<<<< HEAD
 
 class GoldFish(Fish):  # 金鱼
     pass
@@ -413,34 +273,6 @@ s.move()
 
 
 # 多继承
-=======
-class GoldFish(Fish): # 金鱼
-    pass
-class Carp(Fish): # 鲤鱼
-    pass
-class Salmon(Fish): # 三文鱼
-    pass
-class Shark(Fish): # 鲨鱼
-    def __init__(self):
-        self.hungry = True#调用未绑定的父类方法 Fish.__init__(self)或者使用super函数 super().__init__()；从而使该对象可以调用move()
-    def eat(self):
-        if self.hungry:
-        print("吃货的梦想就是天天有得吃！")
-        self.hungry = False
-    else:
-        print("太撑了，吃不下了！")
-        self.hungry = True
-
-g = GoldFish()
-g.move() # 我的位置 9 4
-s = Shark()
-s.eat() # 吃货的梦想就是天天有得吃！
-s.move() 
-# AttributeError: 'Shark' object has no attribute 'x'
-
-
-#多继承
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 class DerivedClassName(Base1, Base2, Base3):
  <statement-1>
@@ -454,11 +286,8 @@ class DerivedClassName(Base1, Base2, Base3):
 '''
 
 # 类定义
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class People:
     # 定义基本属性
     name = ''
@@ -466,15 +295,10 @@ class People:
     # 定义私有属性,私有属性在类外部无法直接进行访问
     __weight = 0
     # 定义构造方法
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w):
         self.name = n
         self.age = a
         self.__weight = w
-<<<<<<< HEAD
 
     def speak(self):
         print("%s 说: 我 %d 岁。" % (self.name, self.age))
@@ -485,20 +309,11 @@ class People:
 class Student(People):
     grade = ''
 
-=======
-    def speak(self):
-        print("%s 说: 我 %d 岁。" % (self.name, self.age))
-
-#单继承示例
-class Student(People):
-    grade = ''
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w, g):
         # 调用父类的构函
         People.__init__(self, n, a, w)
         self.grade = g
     # 覆写父类的方法
-<<<<<<< HEAD
 
     def speak(self):
         print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
@@ -521,27 +336,10 @@ class Speaker:
 class Sample01(Speaker, Student):
     a = ''
 
-=======
-    def speak(self):
-        print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
-# 另一个类，多重继承之前的准备
-class Speaker:
-    topic = ''
-    name = ''
-    def __init__(self, n, t):
-        self.name = n
-        self.topic = t
-    def speak(self):
-        print("我叫 %s，我是一个演说家，我演讲的主题是 %s" % (self.name, self.topic))
-# 多重继承
-class Sample01(Speaker, Student):
-    a = ''
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w, g, t):
         Student.__init__(self, n, a, w, g)
         Speaker.__init__(self, n, t)
         test = Sample01("Tim", 25, 80, 4, "Python")
-<<<<<<< HEAD
         test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
     # 我叫 Tim，我是一个演说家，我演讲的主题是 Python
 
@@ -549,19 +347,12 @@ class Sample01(Speaker, Student):
 class Sample02(Student, Speaker):
     a = ''
 
-=======
-        test.speak() # 方法名同，默认调用的是在括号中排前地父类的方法
-    # 我叫 Tim，我是一个演说家，我演讲的主题是 Python
-class Sample02(Student, Speaker):
-    a = ''
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def __init__(self, n, a, w, g, t):
         Student.__init__(self, n, a, w, g)
         Speaker.__init__(self, n, t)
 
 
 test = Sample02("Tim", 25, 80, 4, "Python")
-<<<<<<< HEAD
 test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
 # Tim 说: 我 25 岁了，我在读 4 年级
 
@@ -578,31 +369,14 @@ class Fish:
         self.num = x
 
 
-=======
-test.speak() # 方法名同，默认调用的是在括号中排前地父类的方法
-# Tim 说: 我 25 岁了，我在读 4 年级
-
-#组合
-class Turtle:
-    def __init__(self, x):
-        self.num = x
-class Fish:
-    def __init__(self, x):
-        self.num = x
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class Pool:
     def __init__(self, x, y):
         self.turtle = Turtle(x)
         self.fish = Fish(y)
-<<<<<<< HEAD
 
     def print_num(self):
         print("水池里面有乌龟%s只，小鱼%s条" % (self.turtle.num, self.fish.num))
 
-=======
-    def print_num(self):
-    print("水池里面有乌龟%s只，小鱼%s条" % (self.turtle.num, self.fish.num))
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 p = Pool(2, 3)
 p.print_num()
@@ -615,17 +389,12 @@ p.print_num()
 '''
 
 # 类对象
-<<<<<<< HEAD
 
 
 class A(object):
     pass
 
 
-=======
-class A(object):
-    pass
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 实例对象：就是通过实例化类创建的对象，称为实例对象，实例对象可以有多个。
 '''
@@ -639,7 +408,6 @@ c = A()
 就是类属性所有的通过该类实例化的对象都能共享。
 '''
 
-<<<<<<< HEAD
 
 class A():
     a = xx  # 类属性
@@ -648,20 +416,12 @@ class A():
         # 类外面，可以通过 实例对象.类属性 和 类名.类属性 进行调用。类里面，通过 self.类属性和 类名.类属性 进行调用。
         A.a = xx  # 使用类属性可以通过 （类名.类属性）调用。
 
-=======
-class A():
-    a = xx #类属性
-    def __init__(self):
-#类外面，可以通过 实例对象.类属性 和 类名.类属性 进行调用。类里面，通过 self.类属性和 类名.类属性 进行调用。
-        A.a = xx #使用类属性可以通过 （类名.类属性）调用。
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 实例属性：实例属性和具体的某个实例对象有关系，并且一个实例对象和另外一个实例对象是不共享属性的，说白了实例
 属性只能在自己的对象里面使用，其他的对象不能直接使用，因为 self 是谁调用，它的值就属于该对象。
 '''
 
-<<<<<<< HEAD
 
 class 类名():
     __init__(self)
@@ -670,15 +430,6 @@ class 类名():
 
 
 # 绑定
-=======
-class 类名():
-    __init__(self)：
-#类外面，可以通过 实例对象.实例属性 调用。类里面，通过 self.实例属性 调用。
-        self.name = xx #实例属性
-
-
-#绑定
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 Python 严格要求方法需要有实例才能被调用，这种限制其实就是 Python 所谓的绑定概念
 
@@ -686,48 +437,31 @@ Python 对象的数据属性通常存储在名为 .__ dict__ 的字典中，我�
 数 vars() 获取 .__ dict__ 。
 '''
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 class CC:
     def setXY(self, x, y):
         self.x = x
         self.y = y
-<<<<<<< HEAD
 
     def printXY(self):
         print(self.x, self.y)
 
 
-=======
-    def printXY(self):
-        print(self.x, self.y)
-
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 dd = CC()
 print(dd.__dict__)
 # {}
 print(vars(dd))
 # {}
 print(CC.__dict__)
-<<<<<<< HEAD
 # {'__module__': '__main__', 'setXY': <function CC.setXY at 0x000000C3473DA048>
 # 'printXY':
 # <function CC.printXY at 0x000000C3473C4F28>, '__dict__': <attribute '__dict__'
 #  of 'CC' objects>,
 # '__weakref__': <attribute '__weakref__' of 'CC' objects>, '__doc__': None}
-=======
-# {'__module__': '__main__', 'setXY': <function CC.setXY at 0x000000C3473DA048>, 'printXY': 
-#<function CC.printXY at 0x000000C3473C4F28>, '__dict__': <attribute '__dict__' of 'CC' objects>, 
-#'__weakref__': <attribute '__weakref__' of 'CC' objects>, '__doc__': None}
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 dd.setXY(4, 5)
 print(dd.__dict__)
 # {'x': 4, 'y': 5}
 print(vars(CC))
-<<<<<<< HEAD
 # {'__module__': '__main__', 'setXY': <function CC.setXY at 0x000000632CA9B048>, 'printXY':
 # <function CC.printXY at 0x000000632CA83048>, '__dict__': <attribute '__dict__' of 'CC' objects>,
 # '__weakref__': <attribute '__weakref__' of 'CC' objects>, '__doc__': None}
@@ -738,25 +472,12 @@ print(CC.__dict__)
 
 
 # 类、属性相关函数
-=======
-# {'__module__': '__main__', 'setXY': <function CC.setXY at 0x000000632CA9B048>, 'printXY': 
-#<function CC.printXY at 0x000000632CA83048>, '__dict__': <attribute '__dict__' of 'CC' objects>, 
-#'__weakref__': <attribute '__weakref__' of 'CC' objects>, '__doc__': None}
-print(CC.__dict__)
-# {'__module__': '__main__', 'setXY': <function CC.setXY at 0x000000632CA9B048>, 'printXY': 
-#<function CC.printXY at 0x000000632CA83048>, '__dict__': <attribute '__dict__' of 'CC' objects>, 
-#'__weakref__': <attribute '__weakref__' of 'CC' objects>, '__doc__': None}
-
-
-#类、属性相关函数
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 '''
 issubclass(class, classinfo) 方法用于判断参数 class 是否是类型参数 classinfo 的子类。
 2. 一个类被认为是其自身的子类。
 3. classinfo 可以是类对象的元组，只要class是其中任何一个候选类的子类，则返回 True 。
 
 '''
-<<<<<<< HEAD
 
 
 class A:
@@ -771,16 +492,6 @@ print(issubclass(B, A))  # True
 print(issubclass(B, B))  # True
 print(issubclass(A, B))  # False
 print(issubclass(B, object))  # True
-=======
-class A:
- pass
-class B(A):
- pass
-print(issubclass(B, A)) # True
-print(issubclass(B, B)) # True
-print(issubclass(A, B)) # False
-print(issubclass(B, object)) # True
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 isinstance(object, classinfo) 方法用于判断一个对象是否是一个已知的类型，类似 type() 。
@@ -790,7 +501,6 @@ isinstance(object, classinfo) 方法用于判断一个对象是否是一个已�
 5. 如果第二个参数不是类或者由类对象组成的元组，会抛出一个 TypeError 异常。
 '''
 a = 2
-<<<<<<< HEAD
 print(isinstance(a, int))  # True
 print(isinstance(a, str))  # False
 print(isinstance(a, (str, int, list)))  # True
@@ -808,25 +518,11 @@ print(isinstance(A(), A))  # True
 print(type(A()) == A)  # True
 print(isinstance(B(), A))  # True
 print(type(B()) == A)  # False
-=======
-print(isinstance(a, int)) # True
-print(isinstance(a, str)) # False
-print(isinstance(a, (str, int, list))) # True
-class A:
- pass
-class B(A):
- pass
-print(isinstance(A(), A)) # True
-print(type(A()) == A) # True
-print(isinstance(B(), A)) # True
-print(type(B()) == A) # False
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 
 '''
 hasattr(object, name) 用于判断对象是否包含对应的属性
 '''
-<<<<<<< HEAD
 
 
 class Coordinate:
@@ -840,22 +536,10 @@ print(hasattr(point1, 'x'))  # True
 print(hasattr(point1, 'y'))  # True
 print(hasattr(point1, 'z'))  # True
 print(hasattr(point1, 'no'))  # False
-=======
-class Coordinate:
- x = 10
- y = -5
- z = 0
-point1 = Coordinate()
-print(hasattr(point1, 'x')) # True
-print(hasattr(point1, 'y')) # True
-print(hasattr(point1, 'z')) # True
-print(hasattr(point1, 'no')) # False
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 getattr(object, name[, default]) 用于返回一个对象属性值。
 '''
-<<<<<<< HEAD
 
 
 class A(object):
@@ -880,30 +564,10 @@ class A(object):
 a = A()
 c = getattr(a, 'set')
 c(a='1', b='2')  # 2 1
-=======
-class A(object):
- bar = 1
-a = A()
-print(getattr(a, 'bar')) # 1
-print(getattr(a, 'bar2', 3)) # 3
-print(getattr(a, 'bar2'))
-# AttributeError: 'A' object has no attribute 'bar2'
-
-class A(object):
- def set(self, a, b):
- x = a
- a = b
- b = x
- print(a, b)
-a = A()
-c = getattr(a, 'set')
-c(a='1', b='2') # 2 1
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 setattr(object, name, value) 对应函数 getattr() ，用于设置属性值，该属性不一定是存在的
 '''
-<<<<<<< HEAD
 
 
 class A(object):
@@ -916,22 +580,11 @@ setattr(a, 'bar', 5)
 print(a.bar)  # 5
 setattr(a, "age", 28)
 print(a.age)  # 28
-=======
-class A(object):
- bar = 1
-a = A()
-print(getattr(a, 'bar')) # 1
-setattr(a, 'bar', 5)
-print(a.bar) # 5
-setattr(a, "age", 28)
-print(a.age) # 28
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 
 '''
 delattr(object, name) 用于删除属性
 '''
 
-<<<<<<< HEAD
 
 class Coordinate:
     x = 10
@@ -947,21 +600,6 @@ delattr(Coordinate, 'z')
 print('--删除 z 属性后--')  # --删除 z 属性后--
 print('x = ', point1.x)  # x = 10
 print('y = ', point1.y)  # y = -5
-=======
-class Coordinate:
- x = 10
- y = -5
- z = 0
-
-point1 = Coordinate()
-print('x = ', point1.x) # x = 10
-print('y = ', point1.y) # y = -5
-print('z = ', point1.z) # z = 0
-delattr(Coordinate, 'z')
-print('--删除 z 属性后--') # --删除 z 属性后--
-print('x = ', point1.x) # x = 10
-print('y = ', point1.y) # y = -5
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
 # 触发错误
 print('z = ', point1.z)
 # AttributeError: 'Coordinate' object has no attribute 'z'
@@ -974,7 +612,6 @@ b. fset -- 设置属性值的函数
 c. fdel -- 删除属性值函数
 d. doc -- 属性描述信息
 '''
-<<<<<<< HEAD
 
 
 class C(object):
@@ -987,27 +624,12 @@ class C(object):
     def setx(self, value):
         self.__x = value
 
-=======
-class C(object):
-    def __init__(self):
-        self.__x = None
-    def getx(self):
-        return self.__x
-    def setx(self, value):
-        self.__x = value
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
     def delx(self):
         del self.__x
 
     x = property(getx, setx, delx, "I'm the 'x' property.")
 
-<<<<<<< HEAD
 
 cc = C()
 cc.x = 2
 print(cc.x)  # 2
-=======
-cc = C()
-cc.x = 2
-print(cc.x) # 2
->>>>>>> 7cff000c1123d77bd29a54b1d38d9d5e8fd76ad0
