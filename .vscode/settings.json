@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/bin/go",
+    "python.pythonPath": "D:\\python3.8\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.flake8Enabled": false,
     "python.linting.enabled": true
