@@ -12,8 +12,6 @@ def showFilePath(path):
         if File in path:
             print("查找路径是："+path)
         if os.path.isdir(path):
-for f in path: 
-    shutil.move(os.path.join(path,f),".."+path)
             for i in os.listdir(path):
                 if File in i:
                     print("查找路径是："+os.path.join(path,i))
