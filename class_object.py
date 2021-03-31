@@ -1,4 +1,4 @@
-#类与对象
+# 类与对象
 
 '''
 对象=属性+方法
@@ -9,8 +9,13 @@
 2.继承：子类自动共享父类之间数据和方法的机制
 3.多态：不同对象对同一方法响应不同的行动
 '''
-#1
-class Turtle: # Python中的类名约定以大写字母开头
+# 1
+
+
+import random
+
+
+class Turtle:  # Python中的类名约定以大写字母开头
     """关于类的一个简单例子"""
     # 属性
     color = 'green'
@@ -80,9 +85,11 @@ class People(Animal):
     def run(self):
         print('人正在走')
 
+
 class Pig(Animal):
     def run(self):
         print('pig is walking')
+
 
 class Dog(Animal):
     def run(self):
@@ -144,7 +151,7 @@ counter.count()  # 1
 counter.count()  # 2
 print(counter.publicCount)  # 2
 print(counter._JustCounter__secretCount)  # 2 Python的私有为伪私有
-print(counter.__secretCount)
+# print(counter.__secretCount)
 # AttributeError: 'JustCounter' object has no attribute '__secretCount'
 
 # 类的私有方法实例
@@ -167,12 +174,12 @@ class Site:
         self.__foo()
 
 
-x = Site('老马的程序人生', 'https://blog.csdn.net/LSGO_MYP')
+x = Site('Joel', 'https://blog.csdn.net/wzb_wzt')
 x.who()
-# name : 老马的程序人生
-# url : https://blog.csdn.net/LSGO_MYP
+# name : Joel
+# url : https://blog.csdn.net/wzb_wzt
 x.foo()  # 这是公共方法
-x.__foo()  # 这是私有方法
+# x.__foo()  # 这是私有方法
 # AttributeError: 'Site' object has no attribute '__foo'
 
 
@@ -200,10 +207,12 @@ class people:
     # 定义私有属性,私有属性在类外部无法直接进行访问
     __weight = 0
     # 定义构造方法
+
     def __init__(self, n, a, w):
         self.name = n
         self.age = a
         self.__weight = w
+
     def speak(self):
         print("%s 说: 我 %d 岁。" % (self.name, self.age))
 
@@ -230,8 +239,9 @@ s.speak()
 
 class Fish:
     def __init__(self):
-        self.x = r.randint(0, 10)
-        self.y = r.randint(0, 10)
+        self.x = random.randint(0, 10)
+        self.y = random.randint(0, 10)
+
     def move(self):
         self.x -= 1
         print("我的位置", self.x, self.y)
@@ -268,7 +278,7 @@ g = GoldFish()
 g.move()  # 我的位置 9 4
 s = Shark()
 s.eat()  # 吃货的梦想就是天天有得吃！
-s.move()
+# s.move()
 # AttributeError: 'Shark' object has no attribute 'x'
 
 
@@ -295,6 +305,7 @@ class People:
     # 定义私有属性,私有属性在类外部无法直接进行访问
     __weight = 0
     # 定义构造方法
+
     def __init__(self, n, a, w):
         self.name = n
         self.age = a
@@ -303,9 +314,8 @@ class People:
     def speak(self):
         print("%s 说: 我 %d 岁。" % (self.name, self.age))
 
+
 # 单继承示例
-
-
 class Student(People):
     grade = ''
 
@@ -317,9 +327,9 @@ class Student(People):
 
     def speak(self):
         print("%s 说: 我 %d 岁了，我在读 %d 年级" % (self.name, self.age, self.grade))
+
+
 # 另一个类，多重继承之前的准备
-
-
 class Speaker:
     topic = ''
     name = ''
@@ -330,18 +340,20 @@ class Speaker:
 
     def speak(self):
         print("我叫 %s，我是一个演说家，我演讲的主题是 %s" % (self.name, self.topic))
+
+
 # 多重继承
-
-
 class Sample01(Speaker, Student):
     a = ''
 
     def __init__(self, n, a, w, g, t):
         Student.__init__(self, n, a, w, g)
         Speaker.__init__(self, n, t)
-        test = Sample01("Tim", 25, 80, 4, "Python")
-        test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
-    # 我叫 Tim，我是一个演说家，我演讲的主题是 Python
+
+
+test = Sample01("Tim", 25, 80, 4, "Python")
+test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
+# 我叫 Tim，我是一个演说家，我演讲的主题是 Python
 
 
 class Sample02(Student, Speaker):
@@ -356,9 +368,8 @@ test = Sample02("Tim", 25, 80, 4, "Python")
 test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
 # Tim 说: 我 25 岁了，我在读 4 年级
 
+
 # 组合
-
-
 class Turtle:
     def __init__(self, x):
         self.num = x
@@ -388,9 +399,8 @@ p.print_num()
 
 '''
 
+
 # 类对象
-
-
 class A(object):
     pass
 
@@ -436,6 +446,7 @@ Python 严格要求方法需要有实例才能被调用，这种限制其实就�
 Python 对象的数据属性通常存储在名为 .__ dict__ 的字典中，我们可以直接访问 __dict__ ，或利用 Python 的内置函
 数 vars() 获取 .__ dict__ 。
 '''
+
 
 class CC:
     def setXY(self, x, y):
