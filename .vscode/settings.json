@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "D:\\python3.8\\python.exe",
+    "python.pythonPath": "E:\\wzb\\python\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.flake8Enabled": false,
     "python.linting.enabled": true
