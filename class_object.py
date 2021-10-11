@@ -260,6 +260,7 @@ class Salmon(Fish):  # 三文鱼
 
 class Shark(Fish):  # 鲨鱼
     def __init__(self):
+        # Fish.__init__(self)
         # 调用未绑定的父类方法 Fish.__init__(self)或者使用super函数 super().__init__()；
         # 从而使该对象可以调用move()
         self.hungry = True
@@ -419,11 +420,11 @@ c = A()
 
 
 class A():
-    a = xx  # 类属性
+    a = 1  # 类属性
 
     def __init__(self):
         # 类外面，可以通过 实例对象.类属性 和 类名.类属性 进行调用。类里面，通过 self.类属性和 类名.类属性 进行调用。
-        A.a = xx  # 使用类属性可以通过 （类名.类属性）调用。
+        A.a = 1  # 使用类属性可以通过 （类名.类属性）调用。
 
 
 '''
@@ -432,10 +433,10 @@ class A():
 '''
 
 
-class 类名():
-    __init__(self)
-    # 类外面，可以通过 实例对象.实例属性 调用。类里面，通过 self.实例属性 调用。
-    self.name = xx  # 实例属性
+# class 类名():
+#     def __init__(self):
+#     # 类外面，可以通过 实例对象.实例属性 调用。类里面，通过 self.实例属性 调用。
+#     self.name = xx  # 实例属性
 
 
 # 绑定

@@ -53,7 +53,7 @@ print(len(thisset)) # 3
 '''
 thisset = set(['Google', 'Baidu', 'Taobao'])
 for item in thisset:
- print(item)
+	print(item)
 # Baidu
 # Google
 # Taobao
