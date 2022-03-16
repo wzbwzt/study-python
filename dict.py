@@ -1,4 +1,3 @@
-#字典
 '''
 可变类型与不可变类型
 
@@ -56,7 +55,6 @@ print(dic1[1]) # one
 dic2 = {'rice': 35, 'wheat': 101, 'corn': 67}
 print(dic2) # {'wheat': 101, 'corn': 67, 'rice': 35}
 print(dic2['rice']) # 35
-12345678
 
 #通过元组作为 key 来创建字典，但一般不这样使用。
 dic = {(1, 2, 3): "Tom", "Age": 12, 3: [3, 5, 7]}
