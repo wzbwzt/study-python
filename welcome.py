@@ -14,14 +14,14 @@ Welcome to Python3!
 
 print(snake_string * how_many_snakes)
 
-a=1
-b=-1
-c=0
+a = 1
+b = -1
+c = 0
 if not b:
-   print(b)
-   
+    print(b)
+
 if not c:
-   print(c)
+    print(c)
 
 if not a:
-   print(a)
+    print(a)
