@@ -85,13 +85,6 @@ def functionname(arg1, arg2=v, *args, **kw):
 
 关键字参数允许传入零个到任意个参数，它们在函数内部自动组装为一个字典 (dict)。
 '''
-<<<<<<< HEAD
-def printinfo1(arg1, *args, **kwargs):
- print(arg1)
- print(args)
- print(kwargs)
-printinfo1(70, 60, 50)
-=======
 
 
 def printinfo(arg1, *args, **kwargs):
@@ -101,7 +94,6 @@ def printinfo(arg1, *args, **kwargs):
 
 
 printinfo(70, 60, 50)
->>>>>>> 5b2a951bcd62aacee4b1f2c0b007f8f0c1c26b4d
 # 70
 # (60, 50)
 # {}
@@ -122,13 +114,6 @@ def functionname(arg1, arg2=v, *args, *, nkw, **kw):
 2. 如果要限制关键字参数的名字，就可以用「命名关键字参数」
 3. 使用命名关键字参数时，要特别注意不能缺少参数名。
 '''
-<<<<<<< HEAD
-def printinfo2(arg1, *, nkw, **kwargs):
- print(arg1)
- print(nkw)
- print(kwargs)
-printinfo2(70, nkw=10, a=1, b=2)
-=======
 
 
 def printinfo(arg1, *, nkw, **kwargs):
@@ -138,7 +123,6 @@ def printinfo(arg1, *, nkw, **kwargs):
 
 
 printinfo(70, nkw=10, a=1, b=2)
->>>>>>> 5b2a951bcd62aacee4b1f2c0b007f8f0c1c26b4d
 # 70
 # 10
 # {'a': 1, 'b': 2}
@@ -237,15 +221,6 @@ print(get())  # 0
 
 
 def outer():
-<<<<<<< HEAD
- num = 10
- def inner():
-    nonlocal num # nonlocal关键字声明
-    num = 100
-    print(num)
- inner()
- print(num)
-=======
     num = 10
 
     def inner():
@@ -256,7 +231,6 @@ def outer():
     inner()
     print(num)
 
->>>>>>> 5b2a951bcd62aacee4b1f2c0b007f8f0c1c26b4d
 
 outer()
 # 100
