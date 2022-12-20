@@ -189,6 +189,8 @@ print(x)
 # [789, 456, 213, 123]
 
 # 获取列表的第二个元素
+
+
 def takeSecond(elem):
     return elem[1]
 

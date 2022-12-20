@@ -1,4 +1,4 @@
-#集合
+# 集合
 '''
 set 与 dict 类似，也是一组 key 的集合，但不存储 value 。由于 key 不能重复，所以，在 set 中，没有重复
 的 key
@@ -7,11 +7,11 @@ set 与 dict 类似，也是一组 key 的集合，但不存储 value 。由于 
 注意， key 为不可变类型，即可哈希的值。
 '''
 num = {}
-print(type(num)) # <class 'dict'>
+print(type(num))  # <class 'dict'>
 num = {1, 2, 3, 4}
-print(type(num)) # <class 'set'>
+print(type(num))  # <class 'set'>
 
-#集合的创建
+# 集合的创建
 '''
 1. 先创建对象再加入元素。
 2. 在创建空集合的时候只能使用 s = set() ，因为 s = {} 创建的是空字典。
@@ -19,41 +19,42 @@ print(type(num)) # <class 'set'>
 basket = set()
 basket.add('apple')
 basket.add('banana')
-print(basket) # {'banana', 'apple'}
+print(basket)  # {'banana', 'apple'}
 
 '''
 1. 直接把一堆元素用花括号括起来 {元素1, 元素2, ..., 元素n} 。
 2. 重复元素在 set 中会被自动被过滤。
 '''
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-print(basket) # {'banana', 'apple', 'pear', 'orange'}
+# {'banana', 'apple', 'pear', 'orange'} <class 'set'>
+print(basket, type(basket))
 
 '''
 使用 set(value) 工厂函数，把列表或元组转换成集合。
 '''
 a = set('abracadabra')
-print(a) 
+print(a)
 # {'r', 'b', 'd', 'c', 'a'}
 b = set(("Google", "Lsgogroup", "Taobao", "Taobao"))
-print(b) 
+print(b)
 # {'Taobao', 'Lsgogroup', 'Google'}
 c = set(["Google", "Lsgogroup", "Taobao", "Google"])
-print(c) 
+print(c)
 # {'Taobao', 'Lsgogroup', 'Google'}
 
-#访问集合中的值
+# 访问集合中的值
 '''
 使用 len() 內建函数得到集合的大小
 '''
 thisset = set(['Google', 'Baidu', 'Taobao'])
-print(len(thisset)) # 3
+print(len(thisset))  # 3
 
 '''
 可以使用 for 把集合中的数据一个个读取出来。
 '''
 thisset = set(['Google', 'Baidu', 'Taobao'])
 for item in thisset:
-	print(item)
+    print(item)
 # Baidu
 # Google
 # Taobao
@@ -61,19 +62,19 @@ for item in thisset:
 通过 in 或 not in 判断一个元素是否在集合中已经存在
 '''
 thisset = set(['Google', 'Baidu', 'Taobao'])
-print('Taobao' in thisset) # True
-print('Facebook' not in thisset) # True
+print('Taobao' in thisset)  # True
+print('Facebook' not in thisset)  # True
 
-#集合的内置方法
+# 集合的内置方法
 '''
 set.add(elmnt) 用于给集合添加元素，如果添加的元素在集合中已存在，则不执行任何操作
 '''
 fruits = {"apple", "banana", "cherry"}
 fruits.add("orange")
-print(fruits) 
+print(fruits)
 # {'orange', 'cherry', 'banana', 'apple'}
 fruits.add("apple")
-print(fruits) 
+print(fruits)
 # {'orange', 'cherry', 'banana', 'apple'}
 
 '''
@@ -96,15 +97,15 @@ discard() 方法不会。
 '''
 fruits = {"apple", "banana", "cherry"}
 fruits.remove("banana")
-print(fruits) # {'apple', 'cherry'}
+print(fruits)  # {'apple', 'cherry'}
 
 '''
 set.pop() 用于随机移除一个元素
 '''
 fruits = {"apple", "banana", "cherry"}
 x = fruits.pop()
-print(fruits) # {'cherry', 'apple'}
-print(x) # banana
+print(fruits)  # {'cherry', 'apple'}
+print(x)  # banana
 
 '''
 1.set.intersection(set1, set2 ...) 返回两个集合的交集。
@@ -113,14 +114,14 @@ print(x) # banana
 '''
 a = set('abracadabra')
 b = set('alacazam')
-print(a) # {'r', 'a', 'c', 'b', 'd'}
-print(b) # {'c', 'a', 'l', 'm', 'z'}
+print(a)  # {'r', 'a', 'c', 'b', 'd'}
+print(b)  # {'c', 'a', 'l', 'm', 'z'}
 c = a.intersection(b)
-print(c) # {'a', 'c'}
-print(a & b) # {'c', 'a'}
-print(a) # {'a', 'r', 'c', 'b', 'd'}
+print(c)  # {'a', 'c'}
+print(a & b)  # {'c', 'a'}
+print(a)  # {'a', 'r', 'c', 'b', 'd'}
 a.intersection_update(b)
-print(a) # {'a', 'c'}
+print(a)  # {'a', 'c'}
 
 '''
 1.set.union(set1, set2...) 返回两个集合的并集。
@@ -128,27 +129,28 @@ print(a) # {'a', 'c'}
 '''
 a = set('abracadabra')
 b = set('alacazam')
-print(a) # {'r', 'a', 'c', 'b', 'd'}
-print(b) # {'c', 'a', 'l', 'm', 'z'}
-print(a | b) # {'l', 'd', 'm', 'b', 'a', 'r', 'z', 'c'}
+print(a)  # {'r', 'a', 'c', 'b', 'd'}
+print(b)  # {'c', 'a', 'l', 'm', 'z'}
+print(a | b)  # {'l', 'd', 'm', 'b', 'a', 'r', 'z', 'c'}
 c = a.union(b)
-print(c) # {'c', 'a', 'd', 'm', 'r', 'b', 'z', 'l'}
+print(c)  # {'c', 'a', 'd', 'm', 'r', 'b', 'z', 'l'}
 
 '''
 1.set.difference(set) 返回集合的差集。
 2. set1 - set2 返回集合的差集。
 3. set.difference_update(set) 集合的差集，直接在原来的集合中移除元素，没有返回值
 '''
+
 a = set('abracadabra')
 b = set('alacazam')
-print(a) # {'r', 'a', 'c', 'b', 'd'}
-print(b) # {'c', 'a', 'l', 'm', 'z'}
+print(a)  # {'r', 'a', 'c', 'b', 'd'}
+print(b)  # {'c', 'a', 'l', 'm', 'z'}
 c = a.difference(b)
-print(c) # {'b', 'd', 'r'}
-print(a - b) # {'d', 'b', 'r'}
-print(a) # {'r', 'd', 'c', 'a', 'b'}
+print(c)  # {'b', 'd', 'r'}
+print(a - b)  # {'d', 'b', 'r'}
+print(a)  # {'r', 'd', 'c', 'a', 'b'}
 a.difference_update(b)
-print(a) # {'d', 'r', 'b'}
+print(a)  # {'d', 'r', 'b'}
 
 '''
 1.set.symmetric_difference(set) 返回集合的异或。
@@ -158,14 +160,14 @@ print(a) # {'d', 'r', 'b'}
 '''
 a = set('abracadabra')
 b = set('alacazam')
-print(a) # {'r', 'a', 'c', 'b', 'd'}
-print(b) # {'c', 'a', 'l', 'm', 'z'}
+print(a)  # {'r', 'a', 'c', 'b', 'd'}
+print(b)  # {'c', 'a', 'l', 'm', 'z'}
 c = a.symmetric_difference(b)
-print(c) # {'m', 'r', 'l', 'b', 'z', 'd'}
-print(a ^ b) # {'m', 'r', 'l', 'b', 'z', 'd'}
-print(a) # {'r', 'd', 'c', 'a', 'b'}
+print(c)  # {'m', 'r', 'l', 'b', 'z', 'd'}
+print(a ^ b)  # {'m', 'r', 'l', 'b', 'z', 'd'}
+print(a)  # {'r', 'd', 'c', 'a', 'b'}
 a.symmetric_difference_update(b)
-print(a) # {'r', 'b', 'm', 'l', 'z', 'd'}
+print(a)  # {'r', 'b', 'm', 'l', 'z', 'd'}
 
 '''
 1.set.issubset(set) 判断集合是不是被其他集合包含，如果是则返回 True，否则返回 False。
@@ -174,13 +176,13 @@ print(a) # {'r', 'b', 'm', 'l', 'z', 'd'}
 x = {"a", "b", "c"}
 y = {"f", "e", "d", "c", "b", "a"}
 z = x.issubset(y)
-print(z) # True
-print(x <= y) # True
+print(z)  # True
+print(x <= y)  # True
 x = {"a", "b", "c"}
 y = {"f", "e", "d", "c", "b"}
 z = x.issubset(y)
-print(z) # False
-print(x <= y) # False
+print(z)  # False
+print(x <= y)  # False
 
 '''
 1. set.issuperset(set) 用于判断集合是不是包含其他集合，如果是则返回 True，否则返回 False。
@@ -189,13 +191,13 @@ print(x <= y) # False
 x = {"f", "e", "d", "c", "b", "a"}
 y = {"a", "b", "c"}
 z = x.issuperset(y)
-print(z) # True
-print(x >= y) # True
+print(z)  # True
+print(x >= y)  # True
 x = {"f", "e", "d", "c", "b"}
 y = {"a", "b", "c"}
 z = x.issuperset(y)
-print(z) # False
-print(x >= y) # False
+print(z)  # False
+print(x >= y)  # False
 
 '''
 set.isdisjoint(set) 用于判断两个集合是不是不相交，如果是返回 True，否则返回 False。
@@ -203,11 +205,11 @@ set.isdisjoint(set) 用于判断两个集合是不是不相交，如果是返回
 x = {"f", "e", "d", "c", "b"}
 y = {"a", "b", "c"}
 z = x.isdisjoint(y)
-print(z) # False
+print(z)  # False
 x = {"f", "e", "d", "m", "g"}
 y = {"a", "b", "c"}
 z = x.isdisjoint(y)
-print(z) # True
+print(z)  # True
 
 '''
 集合的转换
@@ -215,9 +217,9 @@ print(z) # True
 se = set(range(4))
 li = list(se)
 tu = tuple(se)
-print(se, type(se)) # {0, 1, 2, 3} <class 'set'>
-print(li, type(li)) # [0, 1, 2, 3] <class 'list'>
-print(tu, type(tu)) # (0, 1, 2, 3) <class 'tuple'>
+print(se, type(se))  # {0, 1, 2, 3} <class 'set'>
+print(li, type(li))  # [0, 1, 2, 3] <class 'list'>
+print(tu, type(tu))  # (0, 1, 2, 3) <class 'tuple'>
 
 '''
 不可变集合
@@ -225,11 +227,11 @@ Python 提供了不能改变元素的集合的实现版本，即不能增加或�
 是 frozenset 仍然可以进行集合操作，只是不能用带有 update 的方法。
 '''
 
-a = frozenset(range(10)) # 生成一个新的不可变集合
-print(a) 
+a = frozenset(range(10))  # 生成一个新的不可变集合
+print(a)
 # frozenset({0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 b = frozenset('lsgogroup')
-print(b) 
+print(b)
 # frozenset({'g', 's', 'p', 'r', 'u', 'o', 'l'})
 
 '''
@@ -245,10 +247,10 @@ a = [1, 2, 3]
 b = [4, 5, 6]
 c = [4, 5, 6, 7, 8]
 zipped = zip(a, b)
-print(zipped) # <zip object at 0x000000C5D89EDD88>
-print(list(zipped)) # [(1, 4), (2, 5), (3, 6)]
+print(zipped)  # <zip object at 0x000000C5D89EDD88>
+print(list(zipped))  # [(1, 4), (2, 5), (3, 6)]
 zipped = zip(a, c)
-print(list(zipped)) # [(1, 4), (2, 5), (3, 6)]
+print(list(zipped))  # [(1, 4), (2, 5), (3, 6)]
 a1, a2 = zip(*zip(a, b))
-print(list(a1)) # [1, 2, 3]
-print(list(a2)) # [4, 5, 6]
+print(list(a1))  # [1, 2, 3]
+print(list(a2))  # [4, 5, 6]

@@ -8,7 +8,7 @@ else
     expr_false_suite
 
 1.使用缩进而不是大括号来标记代码块边界，因此要特别注意 else 的悬挂问题。
-2.单个 if 语句中的 expression 条件表达式可以通过布尔操作符 and ， or 和 not 实现多重条件判断。
+2.单个 if 语句中的 expression 条件表达式可以通过布尔操作符 and , or 和 not 实现多重条件判断。
 e.g.
 '''
 if 2 > 1 and not 2 > 3:

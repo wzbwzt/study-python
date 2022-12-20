@@ -1,4 +1,4 @@
-#元组
+# 元组
 '''
 「元组」定义语法为： (元素1, 元素2, ..., 元素n)
 1. 小括号把所有元素绑在一起
@@ -16,16 +16,16 @@ print(t1, type(t1))
 print(t2, type(t2))
 # (1, 10.31, 'python') <class 'tuple'>
 tuple1 = (1, 2, 3, 4, 5, 6, 7, 8)
-print(tuple1[1]) # 2
-print(tuple1[5:]) # (6, 7, 8)
-print(tuple1[:5]) # (1, 2, 3, 4, 5)
+print(tuple1[1])  # 2
+print(tuple1[5:])  # (6, 7, 8)
+print(tuple1[:5])  # (1, 2, 3, 4, 5)
 tuple2 = tuple1[:]
-print(tuple2) # (1, 2, 3, 4, 5, 6, 7, 8)
+print(tuple2)  # (1, 2, 3, 4, 5, 6, 7, 8)
 
 temp = (1,)
-print(type(temp)) # <class 'tuple'>
+print(type(temp))  # <class 'tuple'>
 
-#二维元祖
+# 二维元祖
 nested = (1, 10.31, 'python'), ('data', 11)
 print(nested)
 # ((1, 10.31, 'python'), ('data', 11))
@@ -33,17 +33,17 @@ print(nested)
 
 week = ('Monday', 'Tuesday', 'Thursday', 'Friday')
 week = week[:2] + ('Wednesday',) + week[2:]
-print(week) # ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')
+print(week)  # ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')
 
 
-#元组有不可更改 (immutable) 的性质，因此不能直接给元组的元素赋值，但是只要元组中的元素可更改 (mutable)，那么我
-#们可以直接更改其元素，注意这跟赋值其元素不同。
+# 元组有不可更改 (immutable) 的性质，因此不能直接给元组的元素赋值，但是只要元组中的元素可更改 (mutable)，那么我
+# 们可以直接更改其元素，注意这跟赋值其元素不同。
 t1 = (1, 2, 3, [4, 5, 6])
-print(t1) # (1, 2, 3, [4, 5, 6])
+print(t1)  # (1, 2, 3, [4, 5, 6])
 t1[3][0] = 9
-print(t1) # (1, 2, 3, [9, 5, 6])
+print(t1)  # (1, 2, 3, [9, 5, 6])
 
-#元组相关的操作符
+# 元组相关的操作符
 '''
 1. 比较操作符
 2. 逻辑操作符
@@ -55,14 +55,14 @@ print(t1) # (1, 2, 3, [9, 5, 6])
 
 '''
 
-#元组大小和内容都不可更改，因此只有 count 和 index 两种方法。
+# 元组大小和内容都不可更改，因此只有 count 和 index 两种方法。
 t = (1, 10.31, 'python')
-#count('python') 是记录在元组 t 中该元素出现几次，显然是 1 次
-print(t.count('python')) # 1
-print(t.index(10.31)) # 1
+# count('python') 是记录在元组 t 中该元素出现几次，显然是 1 次
+print(t.count('python'))  # 1
+print(t.index(10.31))  # 1
 
 
-#解压元组
+# 解压元组
 '''
 解压（unpack）一维元组（有几个元素左边括号定义几个变量）
 '''
@@ -84,11 +84,11 @@ print(a, b, c, d)
 '''
 t = 1, 2, 3, 4, 5
 a, b, *rest, c = t
-print(a, b, c) # 1 2 5
-print(rest) # [3, 4]
+print(a, b, c)  # 1 2 5
+print(rest)  # [3, 4]
 
 '''
 如果你根本不在乎 rest 变量，那么就用通配符「*」加上下划线「_」。
 '''
 a, b, *_ = t
-print(a, b) # 1 2
+print(a, b)  # 1 2
