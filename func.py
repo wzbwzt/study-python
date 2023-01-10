@@ -36,7 +36,25 @@ def functionname(arg1):
  return [expression]
 
 arg1 - 位置参数 ，这些参数在调用函数 (call function) 时位置要固定
+
+注意事项：
+位置参数在定义时就进行了初始化一次;
+例如下面，name_list并不会在每次调用foo()时执行name_list=[]
+
 '''
+
+
+def foo(name, name_list=[]):
+    name_list.append(name)
+    print(name_list)
+
+
+foo("Alex")
+foo("Rain")
+# 输出：
+# ["Alex"]
+# ["Alex", "Rain"]
+
 # 默认参数
 '''
 def functionname(arg1, arg2=v):
@@ -57,6 +75,7 @@ def functionname(arg1, arg2=v, *args):
 
 1.*args - 可变参数，可以是从零个到任意个，自动组装成元组。
 2. 加了星号（*）的变量名会存放所有未命名的变量参数。
+3.位置参数、默认参数、*args同时出现时，*args必须放在位置参数后面，因为*args本生就i相当于一组位置参数
 
 可变参数允许传入零个到任意个参数，它们在函数调用时自动组装为一个元组 (tuple)。
 '''
@@ -82,6 +101,8 @@ def functionname(arg1, arg2=v, *args, **kw):
  return [expression]
 
 1.**kw - 关键字参数，可以是从零个到任意个，自动组装成字典。
+2.** 的作用是按关键字传值多余的那些值塞到kwargs的字典里。
+3.**kwargs应该放在最后。
 
 关键字参数允许传入零个到任意个参数，它们在函数内部自动组装为一个字典 (dict)。
 '''
