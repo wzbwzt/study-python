@@ -1,3 +1,8 @@
+from dateutil import parser
+import numpy as np
+import datetime
+from dateutil import parser
+
 '''
 datetime 是 Python 中处理日期的标准模块，它提供了 4 种对日期和时间进行处理的类：datetime、date、time 和
 timedelta
@@ -9,11 +14,6 @@ timedelta
 3. datetime.fromtimestamp(tz=None) 使用 unixtimestamp 创建一个 datetime。
 '''
 
-
-from dateutil import parser
-import numpy as np
-import datetime
-from  dateutil import parser
 dt = datetime.datetime(year=2020, month=6, day=25,
                        hour=11, minute=23, second=59)
 print(dt)  # 2020-06-25 11:23:59
