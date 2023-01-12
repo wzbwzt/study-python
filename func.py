@@ -12,6 +12,9 @@ def functionname(parameters):
 '''
 
 
+from functools import reduce
+
+
 def add(a, b):
     print(a + b)
 
@@ -118,7 +121,7 @@ printinfo(70, 60, 50)
 # 70
 # (60, 50)
 # {}
-printinfo1(70, 60, 50, a=1, b=2)
+printinfo(70, 60, 50, a=1, b=2)
 # 70
 # (60, 50)
 # {'a': 1, 'b': 2}
@@ -323,19 +326,21 @@ e.g.，在 filter 和 map 函数中的应用：
 '''
 
 
-#filter
+# filter
 def odd(x): return x % 2 == 1
+
+
 templist = filter(odd, [1, 2, 3, 4, 5, 6, 7, 8, 9])
 print(list(templist))  # [1, 3, 5, 7, 9]
 
-#map
+# map
 m1 = map(lambda x: x ** 2, [1, 2, 3, 4, 5])
-print(list(m1)) # [1, 4, 9, 16, 25]
+print(list(m1))  # [1, 4, 9, 16, 25]
 m2 = map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
-print(list(m2)) # [3, 7, 11, 15, 19]
+print(list(m2))  # [3, 7, 11, 15, 19]
 
-#reduce
-reduce(lambda x,y:x+y, [1, 2, 3, 4])
+# reduce
+print(reduce(lambda x, y: x+y, [1, 2, 3, 4]))
 
 
 '''
