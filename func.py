@@ -343,12 +343,10 @@ print(list(m2))  # [3, 7, 11, 15, 19]
 print(reduce(lambda x, y: x+y, [1, 2, 3, 4]))
 
 
-'''
-自己定义高阶函数
-'''
-
-
 def apply_to_list(fun, some_list):
+    '''
+    自己定义高阶函数
+    '''
     return fun(some_list)
 
 
