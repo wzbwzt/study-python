@@ -13,7 +13,7 @@ def love(x, y):  # 在(x,y)处画爱心lalala
             lv.forward(2)
 
     lv.color('red', 'pink')
-    lv.speed(1000000)
+    lv.speed("fastest")
     lv.pensize(1)
     # 开始画爱心lalala
     lv.down()
@@ -24,7 +24,7 @@ def love(x, y):  # 在(x,y)处画爱心lalala
     lv.left(120)
     curvemove()
     lv.forward(22)
-    lv.write("WZ", font=("Arial", 12, "normal"), align="center")  # 写上表白的人的名字
+    lv.write("ZC", font=("Arial", 12, "normal"), align="center")  # 写上表白的人的名字
     lv.left(140)  # 画完复位
     lv.end_fill()
 
@@ -60,13 +60,13 @@ printer = turtle.Turtle()
 printer.hideturtle()
 printer.penup()
 printer.back(200)
-printer.write("赠给亲爱的 路林\n\n", align="right", font=("宋体", 16, "bold"))
-printer.write("from 小吴", align="center", font=("楷体", 12, "normal"))
+printer.write("To宗康婷\n\n", align="right", font=("宋体", 16, "bold"))
+printer.write("From家珉", align="center", font=("宋体", 12, "bold"))
 
 myWin = turtle.Screen()
 t = turtle.Turtle()
 t.hideturtle()
-t.speed(1000)
+t.speed(1666)
 t.left(90)
 t.up()
 t.backward(200)
