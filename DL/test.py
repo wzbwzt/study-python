@@ -1,3 +1,0 @@
-
-def OK():
-    print("ok")
