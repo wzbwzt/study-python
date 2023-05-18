@@ -9,6 +9,7 @@
 删除 ( remove ,pop ) 这些操作都可以用在它身上。
 '''
 # 创建方式1:利用 range() 创建列表
+import numpy as np
 x = list(range(1, 11, 2))
 print(x, type(x))
 # [1, 3, 5, 7, 9] <class 'list'>
@@ -202,3 +203,14 @@ print(x)
 x.sort(key=lambda a: a[0])
 print(x)
 # [(1, 3), (2, 2), (3, 4), (4, 1)]
+
+
+x = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+x = np.array(x)
+print(x.shape)
+out = x[0, 2]
+print(out)
