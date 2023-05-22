@@ -99,10 +99,9 @@ def load_mnist(normalize=True, flatten=True, one_hot_label=False):
     Parameters
     ----------
     normalize : 将图像的像素值正规化为0.0~1.0
-
-    one_hot_label : one_hot_label为True的情况下，标签作为one-hot数组返回
-    one-hot数组是指[0,0,1,0,0,0,0,0,0,0]这样的数组
-
+    one_hot_label : 
+        one_hot_label为True的情况下，标签作为one-hot数组返回
+        one-hot数组是指[0,0,1,0,0,0,0,0,0,0]这样的数组
     flatten : 是否将图像展开为一维数组
 
     Returns

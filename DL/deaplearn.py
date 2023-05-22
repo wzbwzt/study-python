@@ -13,6 +13,10 @@ def sigmoid(x):
     return 1/(1+np.exp(-x))
 
 
+def sigmoid_grad(x):
+    return (1.0 - sigmoid(x)) * sigmoid(x)
+
+
 # 激活函数-ReLU(Rectified Linear Unit)(simple example)
 def relu(x):
     return np.maximum(0, x)
@@ -25,12 +29,14 @@ def relu(x):
 
 
 def softmax(x):
-    # fix 数值溢出的问题
-    x_max = np.max(x)
-    fix_x = x-x_max
-    ex = np.exp(fix_x)
-    sum = np.sum(ex)
-    return ex/sum
+    if x.ndim == 2:
+        x = x.T
+        x = x - np.max(x, axis=0)
+        y = np.exp(x) / np.sum(np.exp(x), axis=0)
+        return y.T
+
+    x = x - np.max(x)  # 溢出对策
+    return np.exp(x) / np.sum(np.exp(x))
 
 
 # 损失函数(loss function)-均方误差(mean_squared_error)
@@ -43,27 +49,27 @@ def mean_squared_error(y, t):
 
 
 # 损失函数(loss function)-交叉熵误差(cross entropy error)
-def cross_entropy_error(y, t):
+def _cross_entropy_error(y, t):
     delta = 1e-7  # 防止y[i]=0
     return -np.sum(t*np.log(y+delta))
 
 
 # mini-batch 版的交叉熵误差
-def cross_entropy_error(y, t, one_hot=True):
+def cross_entropy_error(y, t):
     """
     y:神经网络的输出
     t:监督数据
-    one_hot: t是否是one_hot表示
     """
     if y.ndim == 1:
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
 
+    # 监督数据是one-hot-vector的情况下，转换为正确解标签的索引
+    if t.size == y.size:
+        t = t.argmax(axis=1)
+
     batch_size = y.shape[0]
-    if one_hot:
-        return -np.sum(t*np.log(y+1e-7))/batch_size
-    else:
-        return -np.sum(np.log(y[np.arange(batch_size), t]+1e-7))/batch_size
+    return -np.sum(np.log(y[np.arange(batch_size), t]+1e-7))/batch_size
 
 
 # 数值微分（numerical differentiation）:通过数值方式近似求解函数的导数的过程
@@ -93,6 +99,7 @@ def _numerical_gradient_no_batch(f, x):
 
 
 def numerical_gradient(f, X):
+    """数值微分求梯度"""
     if X.ndim == 1:
         return _numerical_gradient_no_batch(f, X)
     else:
