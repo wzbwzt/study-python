@@ -7,4 +7,5 @@ gdal/*.zip
 gdal/*.shx
 gdal/*.shp
 gdal/*.dbf
+.ipynb_checkpoints
 
