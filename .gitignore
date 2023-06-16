@@ -4,8 +4,6 @@ vscode
 *.gz
 DL/*.pkl
 gdal/*.zip
-gdal/*.shx
-gdal/*.shp
-gdal/*.dbf
+gdal/*.png
 .ipynb_checkpoints
 
